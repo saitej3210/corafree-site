@@ -1,0 +1,4 @@
+/* Single source of colour for site + admin. Dark = black/grey + terracotta orange. Light = off-white + orange. */
+:root,[data-theme=dark]{--bg:#0c0c0d;--bg0:#070708;--pn:#161617;--pn2:#1f1f21;--pn3:#27272a;--ln:#303034;--tx:#f4f1ec;--t2:#cfcdc8;--mu:#8e8c88;--ac:#e8743b;--ac2:#b8431f;--gl:#f2a46a;--onac:#140a05;--bgrgb:12,12,13;--txrgb:244,241,236;--acrgb:232,116,59;--glrgb:242,164,106;--ok:#4cb783;--bad:#e5584a;--wr:#e8a33d;--r:16px;color-scheme:dark}
+[data-theme=light]{--bg:#f6f2eb;--bg0:#efe9df;--pn:#fffdf9;--pn2:#f0e9de;--pn3:#e9dfd1;--ln:#e0d5c5;--tx:#221c17;--t2:#4b4138;--mu:#7b6e62;--ac:#d9622b;--ac2:#b8431f;--gl:#b8501d;--onac:#ffffff;--bgrgb:246,242,235;--txrgb:34,28,23;--acrgb:217,98,43;--glrgb:184,80,29;color-scheme:light}
+:root{--ink:#0c0c0d;--cream:var(--tx);--clay:var(--ac2);--brass:var(--ac);--glow:var(--gl);--sage:#8fb08c}

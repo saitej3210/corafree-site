@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Corafrée Café — Scroll inside</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="var(--bg)">
+<script>try{document.documentElement.dataset.theme=localStorage.cfTheme||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark")}catch(e){document.documentElement.dataset.theme="dark"}function tg(){var d=document.documentElement,n=d.dataset.theme=="light"?"dark":"light";d.dataset.theme=n;try{localStorage.cfTheme=n}catch(e){}}</script><link rel="stylesheet" href="colors.css"><title>Corafrée Café — Scroll inside</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14100d;--cream:#f6efe4;--clay:#b4532a;--glow:#f2c48d;
+:root{
  --serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--ink)}
@@ -20,14 +20,14 @@ body{font-family:var(--sans);color:var(--cream);background:var(--ink);-webkit-fo
 .stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #menu .stage video{object-fit:contain}
 .shade{position:absolute;inset:0;pointer-events:none;
- background:radial-gradient(ellipse at center,transparent 55%,rgba(10,6,4,.55) 100%)}
+ background:radial-gradient(ellipse at center,transparent 55%,rgba(6,6,7,.55) 100%)}
 .bar{position:absolute;left:0;right:0;height:7vh;background:#000;z-index:3;transition:height 1.4s cubic-bezier(.7,0,.2,1)}
 .bar.t{top:0}.bar.b{bottom:0}
 body.scrolled .bar{height:0}
 
 /* hero */
 .hero{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;
- background:linear-gradient(rgba(10,6,4,.45),rgba(10,6,4,.2) 60%,rgba(10,6,4,.5));will-change:opacity,transform}
+ background:linear-gradient(rgba(6,6,7,.45),rgba(6,6,7,.2) 60%,rgba(6,6,7,.5));will-change:opacity,transform}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,9vw,128px);line-height:.95;letter-spacing:-.02em;
  opacity:0;transform:translateY(24px);animation:in 1.6s .5s cubic-bezier(.2,.7,.2,1) forwards}
 .hero p{margin-top:20px;font-size:clamp(14px,1.6vw,18px);max-width:34ch;color:var(--glow);
@@ -40,14 +40,14 @@ body.scrolled .bar{height:0}
 /* detail cards */
 .card{position:absolute;z-index:2;opacity:0;pointer-events:none;will-change:opacity,transform;
  left:max(6vw,24px);bottom:max(10vh,40px);max-width:min(420px,calc(100vw - 48px));
- padding:28px 30px;border-radius:6px;background:rgba(20,12,8,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+ padding:28px 30px;border-radius:6px;background:rgba(12,12,13,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
  border-left:3px solid var(--clay)}
 .card.r{left:auto;right:max(6vw,24px)}
 .card h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.6vw,46px);line-height:1.05}
 .card .sub{margin-top:6px;color:var(--glow);font-size:15px}
-.card p{margin-top:14px;font-size:15px;line-height:1.6;color:#eadfd0}
+.card p{margin-top:14px;font-size:15px;line-height:1.6;color:var(--t2)}
 .card ul{margin-top:14px;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.card li{font-size:13px;padding:5px 11px;border:1px solid rgba(246,239,228,.35);border-radius:99px}
+.card li{font-size:13px;padding:5px 11px;border:1px solid rgba(var(--txrgb),.35);border-radius:99px}
 .tag{position:absolute;z-index:2;top:max(5vh,28px);left:max(6vw,24px);font-family:var(--serif);font-size:18px;opacity:0;transition:opacity .6s}
 .tag.on{opacity:.9}
 .progress{position:absolute;z-index:3;left:0;bottom:0;height:3px;width:100%;background:var(--clay);transform-origin:left;transform:scaleX(0)}
@@ -60,12 +60,12 @@ body.scrolled .bar{height:0}
 footer{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:60px 24px;background:var(--ink)}
 footer h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,64px)}
 footer p{color:var(--glow)}
-footer small{color:#8f8272;margin-top:30px}
+footer small{color:var(--mu);margin-top:30px}
 
 #loader{position:fixed;inset:0;z-index:99;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .9s .1s}
 #loader.done{opacity:0;pointer-events:none}
 #loader span{font-family:var(--serif);font-size:26px}
-#loader i{display:block;width:160px;height:2px;background:rgba(246,239,228,.2)}
+#loader i{display:block;width:160px;height:2px;background:rgba(var(--txrgb),.2)}
 #loader b{display:block;height:100%;width:0;background:var(--clay);transition:width .2s}
 
 @media (max-width:700px){
@@ -77,9 +77,10 @@ footer small{color:#8f8272;margin-top:30px}
 @media (prefers-reduced-motion:reduce){.hero h1,.hero p,.cue{animation-duration:.01s;animation-delay:0s}}
 </style>
 <link rel="stylesheet" href="tables.css">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
-<nav><b>Corafrée</b><div><a href="#menu">Menu</a><a href="#tables">Tables</a><a href="#book">Book</a><a href="#visit">Visit</a></div></nav>
+<nav><b>Corafrée</b><div><a href="#menu">Menu</a><a href="#tables">Tables</a><a href="#book">Book</a><a href="#visit">Visit</a><a href="admin/index.html">Staff login</a></div></nav>
 <div id="loader"><span>Corafrée</span><i><b id="lb"></b></i></div>
 
 <section class="chapter" id="cafe">
@@ -120,7 +121,7 @@ footer small{color:#8f8272;margin-top:30px}
 
 <section class="chapter" id="tables">
  <div class="stage">
-  <div class="view"><div id="world"></div></div>
+  <div class="view" id="view"></div>
   <div class="shade"></div>
   <div id="tintro"><div><h2>Find your table</h2><p>Scroll to walk the floor. Green means free.</p></div></div>
   <div id="map"></div>
@@ -131,7 +132,7 @@ footer small{color:#8f8272;margin-top:30px}
 <div class="sec" id="about"><h2>A slow kind of café</h2><p>Corafrée is built around long tables, warm light and food made when you order it. Come for the pasta, stay for the afternoon.</p></div>
 <div class="sec" id="mlist"><h2>From the menu</h2><ul class="ml"><li>Pepperoni Rush<span>₹499</span></li><li>Smoky Paneer Tikka<span>₹479</span></li><li>Garlic Bread Crown<span>₹199</span></li><li>Fresh Lime Soda<span>₹199</span></li><li>Molten Choco Lava<span>₹189</span></li></ul></div>
 <div class="sec" id="book"><h2>Book a table</h2><p>Pick a free table from the floor above, or choose here.</p>
-<form id="bf"><input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><select id="tsel"><option value="1">Table 1 · 2 seats</option><option value="3">Table 3 · 2 seats</option><option value="4">Table 4 · 4 seats</option><option value="6">Table 6 · 2 seats</option></select><input required type="datetime-local"><button class="btn" type="submit">Confirm booking</button></form><div id="msg"></div></div>
+<form id="bf"><input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><select id="tsel"><option value="1">Table 1</option></select><select id="tslot"><option value="0">Now</option><option value="1">7:00 PM</option><option value="2">9:00 PM</option></select><input required type="datetime-local"><button class="btn" type="submit">Confirm booking</button></form><div id="msg"></div></div>
 <div class="sec" id="visit"><h2>Visit us</h2><p>Your address here · Open daily, 9am to 11pm<br>Phone: +91 00000 00000</p></div>
 <footer>
  <small>© Corafrée Café</small>
@@ -172,7 +173,7 @@ scenes.forEach((s,i)=>{
 function measure(){
  scenes.forEach(s=>{
   const r=s.el.getBoundingClientRect();
-  const total=s.el.offsetHeight-innerHeight;
+  const total=s.el.offsetHeight-s.el.querySelector('.stage').offsetHeight;
   s.tgt=clamp(-r.top/total,0,1);
  });
 }
@@ -207,7 +208,8 @@ function frame(){
 measure();requestAnimationFrame(frame);
 })();
 </script>
-<script src="tables.js"></script>
+<script src="tour.js"></script>
+<script src="extras.js"></script>
 <script>document.getElementById("bf").onsubmit=e=>{e.preventDefault();document.getElementById("msg").textContent="Thanks! We will confirm your table shortly."}</script>
 </body>
 </html>
